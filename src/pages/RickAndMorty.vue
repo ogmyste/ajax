@@ -184,7 +184,7 @@ function searchNow() {
         </nav>
 
         <div class="is-flex is-align-items-center is-justify-content-space-between is-flex-wrap-wrap mb-4">
-            <p class="subtitle is-6 mb-0">
+            <p class="subtitle is-6 mb-0 result-count">
                 <strong>{{ pagination.count }}</strong> character{{ pagination.count === 1 ? '' : 's' }} found
                 <span v-if="filters.status || filters.gender" class="tag is-link is-light ml-2">filtered</span>
             </p>
