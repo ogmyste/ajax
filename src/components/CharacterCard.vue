@@ -1,5 +1,23 @@
 <script setup>
-defineProps(['character']);
+import { computed } from 'vue';
+
+let props = defineProps({
+    character: {
+        type: Object,
+        required: true
+    }
+});
+
+let statusColor = computed(() => {
+    switch (props.character.status) {
+        case 'Alive':
+            return 'is-success';
+        case 'Dead':
+            return 'is-danger';
+        default:
+            return 'is-warning';
+    }
+});
 </script>
 
 <template>
@@ -9,10 +27,14 @@ defineProps(['character']);
         </header>
         <div class="card-image">
             <figure class="image is-4by3">
-                <img :src="character.image" />
+                <img :src="character.image" :alt="character.name" />
             </figure>
         </div>
         <div class="card-content">
+            <div class="tags mb-4">
+                <span class="tag" :class="statusColor">{{ character.status }}</span>
+                <span class="tag is-link is-light">{{ character.gender }}</span>
+            </div>
             <div class="content">
                 <table>
                     <tbody>
