@@ -11,6 +11,7 @@ import CanvasExample from './pages/CanvasExample.vue';
 import WebApis from './pages/WebApis.vue';
 import Leaflet from './pages/Leaflet.vue';
 import Chat from './pages/Chat.vue';
+import Buttons from './pages/Buttons.vue';
 
 const routes = [
   { path: '/', component: ToDo, name: 'ToDo' },
@@ -22,6 +23,7 @@ const routes = [
   { path: '/webapis', component: WebApis, name: 'WebApis' },
   { path: '/leaflet', component: Leaflet, name: 'Leaflet' },
   { path: '/chat', component: Chat, name: 'Chat' },
+  { path: '/buttons', component: Buttons, name: 'Buttons' },
 ];
 
 export const router = createRouter({
